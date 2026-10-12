@@ -24,7 +24,7 @@ async function redis(cmd) {
 
 module.exports = async (req, res) => {
   res.setHeader("Cache-Control", "no-store");
-  if (!URL_ || !TOKEN) return res.status(503).json({ error: "storage not connected", envNames: Object.keys(process.env).filter(k => /KV|REDIS|UPSTASH|STORAGE/i.test(k)) });
+  if (!URL_ || !TOKEN) return res.status(503).json({ error: "storage not connected", envNames: Object.keys(process.env).filter(k => !/^(VERCEL|AWS|NODE|PATH|LANG|TZ|HOME|PWD|LAMBDA|_)/.test(k)).sort() });
   try {
     if (req.method === "GET") {
       const v = await redis(["GET", KEY]);
