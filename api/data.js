@@ -1,6 +1,15 @@
-// 앱에서 고친 일정 데이터를 Upstash Redis(Vercel Storage)에 저장/불러오기
-const URL_ = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-const TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+// Vercel Storage(Upstash) 환경변수 이름은 접두어가 붙을 수 있어서 자동으로 찾음
+function findEnv() {
+  const env = process.env;
+  const keys = Object.keys(env);
+  const urlKey = keys.find(k => /KV_REST_API_URL$/.test(k)) || keys.find(k => /REDIS_REST_URL$/.test(k)) || keys.find(k => /REST_API_URL$/.test(k));
+  if (!urlKey) return {};
+  const base = urlKey.replace(/_?(KV_REST_API_URL|REDIS_REST_URL|REST_API_URL)$/, "");
+  const tokKey = keys.find(k => k.startsWith(base) && /(KV_REST_API_TOKEN|REDIS_REST_TOKEN|REST_API_TOKEN)$/.test(k) && !/READ_ONLY/.test(k))
+    || keys.find(k => /(KV_REST_API_TOKEN|REDIS_REST_TOKEN)$/.test(k) && !/READ_ONLY/.test(k));
+  return { url: env[urlKey], token: tokKey && env[tokKey] };
+}
+const { url: URL_, token: TOKEN } = findEnv();
 const KEY = "yantai-trip";
 
 async function redis(cmd) {
@@ -15,7 +24,7 @@ async function redis(cmd) {
 
 module.exports = async (req, res) => {
   res.setHeader("Cache-Control", "no-store");
-  if (!URL_ || !TOKEN) return res.status(503).json({ error: "storage not connected" });
+  if (!URL_ || !TOKEN) return res.status(503).json({ error: "storage not connected", envNames: Object.keys(process.env).filter(k => /KV|REDIS|UPSTASH|STORAGE/i.test(k)) });
   try {
     if (req.method === "GET") {
       const v = await redis(["GET", KEY]);
