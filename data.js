@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 6;
+window.TRIP_REV = 7;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -749,7 +749,7 @@ window.TRIP = {
  "checks": {
   "c000": {
    "done": true,
-   "grp": "체크",
+   "grp": "확인사항",
    "name": "항공권 + 숙소 예약 (트립닷컴)",
    "o": 0,
    "sec": "todo",
@@ -757,7 +757,7 @@ window.TRIP = {
   },
   "c001": {
    "done": false,
-   "grp": "체크",
+   "grp": "확인사항",
    "name": "공항버스 예약 (현지에서)",
    "o": 1,
    "sec": "todo",
@@ -765,7 +765,7 @@ window.TRIP = {
   },
   "c002": {
    "done": false,
-   "grp": "체크",
+   "grp": "확인사항",
    "name": "3일차 기차표 예매 (전날 밤)",
    "o": 2,
    "sec": "todo",
@@ -773,7 +773,7 @@ window.TRIP = {
   },
   "c003": {
    "done": false,
-   "grp": "체크",
+   "grp": "확인사항",
    "name": "봉래각 · 삼선산 입장권 (트립닷컴)",
    "o": 3,
    "sec": "todo",
@@ -781,7 +781,7 @@ window.TRIP = {
   },
   "c004": {
    "done": false,
-   "grp": "체크",
+   "grp": "확인사항",
    "name": "항공권/숙소 바우처 저장",
    "o": 4,
    "sec": "todo",
@@ -789,7 +789,7 @@ window.TRIP = {
   },
   "c005": {
    "done": false,
-   "grp": "체크",
+   "grp": "확인사항",
    "name": "여행자 보험 가입",
    "o": 5,
    "sec": "todo",
@@ -797,7 +797,7 @@ window.TRIP = {
   },
   "c006": {
    "done": false,
-   "grp": "체크",
+   "grp": "확인사항",
    "name": "환전 (트래블로그)",
    "o": 100,
    "sec": "todo",
@@ -805,7 +805,7 @@ window.TRIP = {
   },
   "c007": {
    "done": false,
-   "grp": "체크",
+   "grp": "확인사항",
    "name": "이심 (4일치)",
    "o": 101,
    "sec": "todo",
@@ -813,7 +813,7 @@ window.TRIP = {
   },
   "c008": {
    "done": true,
-   "grp": "체크",
+   "grp": "확인사항",
    "name": "알리, 위챗, 따종, 바이두 확인",
    "o": 102,
    "sec": "todo",
@@ -951,6 +951,94 @@ window.TRIP = {
    "name": "봉투",
    "o": 310,
    "sub": "지퍼백 · 비닐백"
+  },
+  "b000": {
+   "grp": "타오바오",
+   "name": "속눈썹",
+   "sub": "",
+   "done": false,
+   "o": 500,
+   "sec": "todo"
+  },
+  "b001": {
+   "grp": "타오바오",
+   "name": "휴지",
+   "sub": "",
+   "done": false,
+   "o": 501,
+   "sec": "todo"
+  },
+  "b002": {
+   "grp": "타오바오",
+   "name": "퍼프",
+   "sub": "",
+   "done": false,
+   "o": 502,
+   "sec": "todo"
+  },
+  "b003": {
+   "grp": "타오바오",
+   "name": "투도어펀",
+   "sub": "",
+   "done": false,
+   "o": 503,
+   "sec": "todo"
+  },
+  "b004": {
+   "grp": "타오바오",
+   "name": "화장품",
+   "sub": "",
+   "done": false,
+   "o": 504,
+   "sec": "todo"
+  },
+  "b100": {
+   "grp": "면세점",
+   "name": "리락쿠마 노트북 파우치",
+   "sub": "",
+   "done": false,
+   "o": 600,
+   "sec": "todo"
+  },
+  "b101": {
+   "grp": "면세점",
+   "name": "리락쿠마 우산",
+   "sub": "",
+   "done": false,
+   "o": 601,
+   "sec": "todo"
+  },
+  "b102": {
+   "grp": "면세점",
+   "name": "향수",
+   "sub": "",
+   "done": false,
+   "o": 602,
+   "sec": "todo"
+  },
+  "b103": {
+   "grp": "면세점",
+   "name": "네이밍 쉐딩",
+   "sub": "",
+   "done": false,
+   "o": 603,
+   "sec": "todo"
+  },
+  "b104": {
+   "grp": "면세점",
+   "name": "보조배터리",
+   "sub": "",
+   "done": false,
+   "o": 604,
+   "sec": "todo"
+  },
+  "b105": {
+   "grp": "면세점",
+   "name": "화장품",
+   "sub": "",
+   "done": false,
+   "o": 605,
+   "sec": "todo"
   }
  },
  "links": {

@@ -176,8 +176,11 @@ const LS="yt-doc",PEND="yt-pending";
 const ls={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 // 예전 버전에서 체크한 것 가져오기
 const old=ls.get("yt-checks");if(old){for(const k in old)if(DATA.checks[k])DATA.checks[k].done=old[k];try{localStorage.removeItem("yt-checks")}catch(e){}}
+// 노션 새 버전(data.js)에 앱에서 저장한 체크 표시·직접 추가한 항목을 얹기
+function fresh(saved){const out=JSON.parse(JSON.stringify(window.TRIP));const sc=(saved&&saved.checks)||{};
+  for(const id in sc){if(out.checks[id])out.checks[id].done=!!sc[id].done;else out.checks[id]=sc[id];}return out;}
 const cached=ls.get(LS);if(cached&&cached.base>=REV)DATA=cached.data;
-else if(cached&&cached.data)DATA=Object.assign({},cached.data,{events:DATA.events,days:DATA.days,places:DATA.places,links:DATA.links});
+else if(cached&&cached.data)DATA=fresh(cached.data);
 const subs={};const snap=c=>({docs:Object.entries(DATA[c]||{}).map(([id,d])=>({id,data:()=>d}))});
 const fireAll=()=>Object.keys(subs).forEach(c=>subs[c].forEach(f=>f(snap(c))));
 const fire=c=>(subs[c]||[]).forEach(f=>f(snap(c)));
@@ -207,7 +210,7 @@ window.claude={use:async n=>n==="db"?{collection:coll}:null};
     const j=await r.json();
     if(j&&j.data&&j.base>=REV){DATA=j.data;ls.set(LS,{base:REV,data:DATA});fireAll();}
     else{ // data.js가 더 최신(노션 반영) → 일정·장소·링크는 data.js(노션)로 바꾸고, 체크는 앱에서 저장된 걸 유지
-      if(j&&j.data){const keep=j.data;DATA=Object.assign({},keep,{events:DATA.events,days:DATA.days,places:DATA.places,links:DATA.links});}
+      if(j&&j.data){DATA=fresh(j.data);}
       ls.set(LS,{base:REV,data:DATA});fireAll();push();}
   }catch(e){}
 })();
