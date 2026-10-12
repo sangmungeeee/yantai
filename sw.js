@@ -1,5 +1,5 @@
 // 오프라인용: 한 번 열면 인터넷 없이도 열려. 데이터 바꾸면 VERSION 숫자를 올려줘.
-const VERSION = "yt-v14";
+const VERSION = "yt-v15";
 const FILES = ["./", "index.html", "data.js", "manifest.webmanifest",
   "fonts/Pretendard-Black.woff", "fonts/Pretendard-SemiBold.woff",
   "icons/apple-touch-icon.png", "icons/icon-192.png", "icons/icon-512.png"];
