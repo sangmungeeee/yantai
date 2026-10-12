@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 7;
+window.TRIP_REV = 8;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -958,7 +958,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 500,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   },
   "b001": {
    "grp": "타오바오",
@@ -966,7 +967,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 501,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   },
   "b002": {
    "grp": "타오바오",
@@ -974,7 +976,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 502,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   },
   "b003": {
    "grp": "타오바오",
@@ -982,7 +985,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 503,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   },
   "b004": {
    "grp": "타오바오",
@@ -990,7 +994,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 504,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   },
   "b100": {
    "grp": "면세점",
@@ -998,7 +1003,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 600,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   },
   "b101": {
    "grp": "면세점",
@@ -1006,7 +1012,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 601,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   },
   "b102": {
    "grp": "면세점",
@@ -1014,7 +1021,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 602,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   },
   "b103": {
    "grp": "면세점",
@@ -1022,7 +1030,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 603,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   },
   "b104": {
    "grp": "면세점",
@@ -1030,7 +1039,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 604,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   },
   "b105": {
    "grp": "면세점",
@@ -1038,7 +1048,8 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 605,
-   "sec": "todo"
+   "sec": "todo",
+   "top": "구매 리스트"
   }
  },
  "links": {

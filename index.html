@@ -118,6 +118,9 @@ nav .in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(
 .sbtns .danger{color:var(--seal);border-color:var(--seal)}
 .sbtns .danger.arm{background:var(--seal);color:#fff}
 #serr{color:var(--seal);font-size:13px;margin-top:8px}
+.grp h3.top{font-size:14.5px;color:var(--ink);font-weight:700;margin-bottom:8px}
+.grp h4.subg{font-size:12.5px;color:var(--muted);font-weight:700;margin:10px 0 6px 4px}
+.grp h4.subg:first-of-type{margin-top:0}
 .ck .pen{margin-left:auto}
 .links .row{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line)}
 .links .row:last-child{border-bottom:none}
@@ -224,7 +227,7 @@ const KINDS=[["","일반"],["food","식사"],["move","이동"],["key","중요"]]
 const SCHEMA={
  events:{name:"일정",f:[["day","일차","day"],["time","시작 시간","time"],["end","끝나는 시간 (선택)","time"],["title","일정 (한국어)"],["zh","중국어 지점명"],["addr","주소","area"],["loc","숙소에서 얼마나 걸려?"],["memo","메모","area"],["links","블로그 링크 (한 줄에 하나씩)","area"],["kind","종류","kind"],["badge","뱃지 (예: 예약 예정)"]]},
  places:{name:"장소",f:[["cat","카테고리"],["ko","한국어 (별칭)"],["zh","중국어"],["addr","주소","area"],["loc","위치"]]},
- checks:{name:"체크리스트",f:[["grp","그룹 (예: 기내)"],["name","항목"],["sub","세부 (선택)","area"]]},
+ checks:{name:"체크리스트",f:[["top","큰 묶음 (선택, 예: 구매 리스트)"],["grp","그룹 (예: 기내)"],["name","항목"],["sub","세부 (선택)","area"]]},
  links:{name:"링크",f:[["title","제목"],["url","링크 주소"]]},
  days:{name:"그날 제목",f:[["title","제목"]]}
 };
@@ -301,8 +304,12 @@ function renderCheck(){
   const C=[...S.checks].filter(c=>secOf(c)===sec).sort(byO);const grps=[...new Set(C.map(c=>c.grp||"기타"))];
   const n=C.filter(c=>c.done).length;
   $(el).innerHTML=`<div class="prog">${lbl} ${n} / ${C.length}<div class="bar"><i style="width:${C.length?n/C.length*100:0}%"></i></div></div>`+
-  grps.map(g=>`<div class="grp">${grps.length>1?`<h3>${esc(g)}</h3>`:""}<div class="card">${C.filter(c=>(c.grp||"기타")===g).map(c=>
-   `<label class="ck"><input type="checkbox" id="c-${esc(c.id)}" data-k="${esc(c.id)}" ${c.done?"checked":""}><span>${esc(c.name)}${c.sub?`<span class="sub">${esc(c.sub)}</span>`:""}</span>${pen("checks",c.id)}</label>`).join("")}</div></div>`).join("")+
+  (()=>{const item=c=>`<label class="ck"><input type="checkbox" id="c-${esc(c.id)}" data-k="${esc(c.id)}" ${c.done?"checked":""}><span>${esc(c.name)}${c.sub?`<span class="sub">${esc(c.sub)}</span>`:""}</span>${pen("checks",c.id)}</label>`;
+   const tops=[...new Set(C.map(c=>c.top||c.grp||"기타"))];
+   return tops.map(t=>{const T=C.filter(c=>(c.top||c.grp||"기타")===t);const subs=[...new Set(T.map(c=>c.grp||"기타"))];
+     const head=tops.length>1?`<h3 class="top">${esc(t)}</h3>`:"";
+     if(subs.length===1&&subs[0]===t)return `<div class="grp">${head}<div class="card">${T.map(item).join("")}</div></div>`;
+     return `<div class="grp">${head}${subs.map(g=>`<h4 class="subg">${esc(g)}</h4><div class="card">${T.filter(c=>(c.grp||"기타")===g).map(item).join("")}</div>`).join("")}</div>`;}).join("")})()+
    addBtn("checks","항목 추가",`data-sec="${sec}"`);});
 }
 const busy=new Set();
