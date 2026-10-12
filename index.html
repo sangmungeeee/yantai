@@ -90,6 +90,9 @@ nav .in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(
 @media (max-width:360px){.info{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .zhname{display:inline;font-family:var(--zh);font-weight:500;font-size:13.5px;color:var(--sea);margin-left:6px;cursor:pointer;border-bottom:1px dotted var(--sea);overflow-wrap:anywhere}
+#toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translate(-50%,10px);background:var(--sea);color:#fff;font-size:13px;padding:8px 14px;border-radius:999px;opacity:0;transition:.2s;pointer-events:none;z-index:30;max-width:90vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.zhname{-webkit-user-select:none;user-select:none}
 .zhname.done{background:var(--sea);color:var(--bg);border-radius:4px;padding:0 4px}
 .addr{font-family:var(--zh);font-size:12.5px;color:var(--muted);margin-top:3px;overflow-wrap:anywhere}
 .dist{font-size:12.5px;color:var(--ink);margin-top:2px}
@@ -267,9 +270,14 @@ function renderPlaces(){
   <div class="places">${list.map(p=>`<div class="card place"><div><span class="cat">${esc(p.cat)}</span><div class="nm">${esc(p.ko)}</div></div>
    <button class="copy" data-t="${esc(p.zh)}">중국어 복사</button><div style="grid-row:1/3;grid-column:3">${pen("places",p.id)}</div><div class="cn">${esc(p.zh)}</div>${p.addr?`<div class="ad">${esc(p.addr)}</div>`:""}${p.loc?`<div class="loc">📍 ${esc(p.loc)}</div>`:""}</div>`).join("")||`<div class="empty">장소가 없어</div>`}</div>${addBtn("places","장소 추가")}`;
 }
+function toast(msg){let t=document.getElementById("toast");if(!t){t=document.createElement("div");t.id="toast";document.body.appendChild(t)}
+  t.textContent=msg;t.classList.add("show");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("show"),1500)}
+function legacyCopy(t){const ta=document.createElement("textarea");ta.value=t;ta.setAttribute("readonly","");ta.style.cssText="position:fixed;top:0;left:0;opacity:0";document.body.appendChild(ta);
+  ta.select();ta.setSelectionRange(0,t.length);let ok=false;try{ok=document.execCommand("copy")}catch(e){}ta.remove();return ok}
 async function copyText(t,el,reset){
-  try{await navigator.clipboard.writeText(t);el.classList.add("done");if(reset)el.textContent="복사됨"}
-  catch(err){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}
+  let ok=false;try{await navigator.clipboard.writeText(t);ok=true}catch(err){ok=legacyCopy(t)}
+  if(ok){el.classList.add("done");if(reset)el.textContent="복사됨";toast("📋 복사됨 · "+t)}
+  else{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);toast("길게 눌러서 복사해줘")}
   setTimeout(()=>{el.classList.remove("done");if(reset)el.textContent=reset},1400);
 }
 $("#p-place").addEventListener("click",e=>{
