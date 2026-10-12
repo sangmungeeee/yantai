@@ -17,3 +17,9 @@
 5. 나온 주소(…vercel.app)를 아이폰 사파리로 열기 → 공유 → 홈 화면에 추가
 
 이후엔 GitHub에서 `data.js`만 고쳐서 저장하면 Vercel이 1분 안에 자동으로 다시 배포해.
+
+## 앱에서 수정 (모든 기기 동기화)
+- 오른쪽 위 ✏️ 편집 → 일정·장소·체크·짐·링크 추가/수정/삭제
+- 고친 내용은 `api/data.js`가 Vercel Storage(Upstash Redis)에 저장해서 모든 기기에 똑같이 보여
+- 처음 한 번: Vercel 프로젝트 → Storage → Create Database → Upstash(Redis) → 프로젝트에 Connect → Redeploy
+- `data.js`의 `TRIP_REV`를 올리면(노션 기준으로 다시 맞출 때) 앱에서 고친 내용 대신 data.js 내용이 적용돼

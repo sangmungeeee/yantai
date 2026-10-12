@@ -123,7 +123,6 @@ nav .in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(
 .elinks{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .elinks a{font-size:12.5px;color:var(--sea);background:var(--sea-soft);border-radius:999px;padding:3px 10px;text-decoration:none}
 .dayhead{flex-wrap:wrap}.dayhead h2{font-size:20px}.dayhead span{white-space:nowrap}.dayhead .pen{margin-left:auto}
-#edit{display:none!important}
 body{margin:0}*{box-sizing:border-box}
 h1,h2,h3,p{margin:0}
 </style>
@@ -166,14 +165,48 @@ h1,h2,h3,p{margin:0}
 
 <script src="data.js"></script>
 <script>
-// 저장소: 데이터는 data.js, 체크 표시는 이 폰(localStorage)에만 저장
-(function(){const DATA=window.TRIP;let saved={};try{saved=JSON.parse(localStorage.getItem("yt-checks")||"{}")}catch(e){}
-for(const k in saved)if(DATA.checks[k])DATA.checks[k].done=saved[k];
+// 저장소: 기본 데이터는 data.js, 앱에서 고친 건 /api/data(서버)에 저장해서 모든 기기에 동기화.
+// 서버가 안 되면(오프라인 등) 이 폰에 임시 저장했다가 다음에 연결되면 올림.
+(function(){
+const REV=window.TRIP_REV||1;let DATA=JSON.parse(JSON.stringify(window.TRIP));
+const LS="yt-doc",PEND="yt-pending";
+const ls={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+// 예전 버전에서 체크한 것 가져오기
+const old=ls.get("yt-checks");if(old){for(const k in old)if(DATA.checks[k])DATA.checks[k].done=old[k];try{localStorage.removeItem("yt-checks")}catch(e){}}
+const cached=ls.get(LS);if(cached&&cached.base>=REV)DATA=cached.data;
 const subs={};const snap=c=>({docs:Object.entries(DATA[c]||{}).map(([id,d])=>({id,data:()=>d}))});
+const fireAll=()=>Object.keys(subs).forEach(c=>subs[c].forEach(f=>f(snap(c))));
 const fire=c=>(subs[c]||[]).forEach(f=>f(snap(c)));
-const coll=c=>({onSnapshot(f){(subs[c]??=[]).push(f);setTimeout(()=>f(snap(c)),0);return()=>{}},
- doc:id=>({async update(d){Object.assign(DATA[c][id],d);if(c==="checks"&&"done"in d){saved[id]=d.done;try{localStorage.setItem("yt-checks",JSON.stringify(saved))}catch(e){}}fire(c)}})});
-window.claude={use:async n=>n==="db"?{collection:coll}:null};})();
+let timer=null,saving=false;
+async function push(){
+  if(saving){clearTimeout(timer);timer=setTimeout(push,500);return}
+  saving=true;const body={base:REV,data:DATA};
+  try{const r=await fetch("api/data",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    ls.set(PEND,r.ok?false:true);}catch(e){ls.set(PEND,true)}finally{saving=false}
+}
+function changed(c){ls.set(LS,{base:REV,data:DATA});ls.set(PEND,true);fire(c);clearTimeout(timer);timer=setTimeout(push,400)}
+const rid=()=>"x"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const coll=c=>({
+  onSnapshot(f){(subs[c]??=[]).push(f);setTimeout(()=>f(snap(c)),0);return()=>{}},
+  doc:id=>({
+    async set(d){(DATA[c]??={})[id]=JSON.parse(JSON.stringify(d));changed(c)},
+    async update(d){Object.assign(DATA[c][id],d);changed(c)},
+    async delete(){delete DATA[c][id];changed(c)}}),
+  async add(d){(DATA[c]??={})[rid()]=JSON.parse(JSON.stringify(d));changed(c)}
+});
+window.claude={use:async n=>n==="db"?{collection:coll}:null};
+// 서버에서 최신 내용 받기
+(async()=>{
+  try{
+    if(ls.get(PEND)){await push();}
+    const r=await fetch("api/data",{cache:"no-store"});if(!r.ok)return;
+    const j=await r.json();
+    if(j&&j.data&&j.base>=REV){DATA=j.data;ls.set(LS,{base:REV,data:DATA});fireAll();}
+    else{ls.set(LS,{base:REV,data:DATA});push();}  // data.js가 더 최신(노션 반영) → 서버 덮어쓰기
+  }catch(e){}
+})();
+addEventListener("online",()=>{if(ls.get(PEND))push()});
+})();
 if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 </script>
 <script>
