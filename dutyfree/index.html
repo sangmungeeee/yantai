@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>면세 비교</title>
+<meta name="theme-color" content="#f2f7f3">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="면세 비교">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<style>
+@font-face{font-family:"PtdBlack";src:url("../fonts/Pretendard-Black.woff") format("woff");font-display:swap}
+@font-face{font-family:"PtdSemi";src:url("../fonts/Pretendard-SemiBold.woff") format("woff");font-display:swap}
+:root{--bg:#f2f7f3;--card:#fff;--ink:#17261d;--muted:#647a6c;--line:#dde8e0;--g:#1d5e3f;--g2:#2f8f57;--soft:#e2f3e8;--red:#e0484a;color-scheme:light;
+--d:"PtdBlack","Apple SD Gothic Neo",sans-serif;--b:"PtdSemi","Apple SD Gothic Neo",sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--b)}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px calc(110px + env(safe-area-inset-bottom))}
+header{position:sticky;top:0;background:var(--bg);padding:16px 0 10px;z-index:5;border-bottom:1px solid var(--line)}
+h1{font:400 26px var(--d);color:var(--g)}
+.meta{display:flex;gap:8px;align-items:center;margin-top:6px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.meta input{width:76px;padding:4px 6px;border:1px solid var(--line);border-radius:6px;font:inherit;background:var(--card)}
+.sum{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.sum .card{padding:12px}
+.sum b{display:block;font:400 22px var(--d);color:var(--g)}
+.sum small{color:var(--muted);font-size:12px}
+.over b{color:var(--red)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px}
+.prod{margin-bottom:12px;padding:14px}
+.ph{display:flex;align-items:center;gap:8px}
+.ph .nm{flex:1;font:400 18px var(--d)}
+.ph .best{font-size:12px;color:var(--g2);background:var(--soft);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.memo{font-size:12.5px;color:var(--muted);margin-top:2px;white-space:pre-line}
+.rows{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.row{display:grid;grid-template-columns:64px 1fr auto;gap:8px;align-items:center;padding:8px 10px;border-radius:10px;background:var(--bg);font-size:13.5px}
+.row.win{background:var(--soft);outline:1.5px solid var(--g2)}
+.row .shop{font-weight:700}
+.row .calc{color:var(--muted);font-size:12px;overflow-wrap:anywhere}
+.row .fin{text-align:right;font-weight:700;white-space:nowrap}
+.row .fin small{display:block;font-weight:400;color:var(--muted);font-size:11.5px}
+.row.win .fin{color:var(--g)}
+.empty{color:var(--muted);font-size:13px;padding:6px 2px}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:9px;padding:7px 12px;font:700 13px var(--b);cursor:pointer}
+.btn.pri{background:var(--g);border-color:var(--g);color:#fff}
+.btn.del{color:var(--red);border-color:var(--red)}
+.btn.del.arm{background:var(--red);color:#fff}
+.add{display:block;width:100%;margin-top:6px;border:1.5px dashed var(--g2);background:transparent;color:var(--g2);border-radius:12px;padding:12px;font:700 14px var(--b);cursor:pointer}
+.chk{width:20px;height:20px;accent-color:var(--g2)}
+.prod.off{opacity:.55}
+.sheet{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:20;display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheet form{background:var(--card);width:100%;max-width:560px;max-height:90vh;overflow:auto;border-radius:16px 16px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom))}
+.sheet h3{font:400 20px var(--d);margin-bottom:10px}
+.fld{display:block;margin-bottom:10px}
+.fld span{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}
+.fld input,.fld textarea,.fld select{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:9px 10px;font:16px var(--b);color:var(--ink)}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.sbtns{display:flex;gap:8px;margin-top:8px}.sbtns span{flex:1}
+.hint{font-size:12px;color:var(--muted);margin:2px 0 10px}
+.shoplist{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tagx{background:var(--soft);color:var(--g);border-radius:999px;padding:4px 10px;font-size:13px}
+.tagx button{border:0;background:none;color:var(--red);margin-left:4px;cursor:pointer}
+footer{margin:18px 0;font-size:12px;color:var(--muted);line-height:1.6}
+</style></head><body>
+<div class="wrap">
+<header>
+  <h1>🛍️ 면세 비교</h1>
+  <div class="meta">환율 $1 = ₩<input id="rate" inputmode="decimal"> · 면세 한도 $<input id="limit" inputmode="decimal"> <button class="btn" id="shopsBtn" type="button">면세점 편집</button></div>
+</header>
+<div class="sum">
+  <div class="card" id="sumBox"><small>최저가로 다 사면</small><b id="sumUsd">$0</b><small id="sumKrw">₩0</small></div>
+  <div class="card" id="limBox"><small>면세 한도 남은 금액</small><b id="left">$0</b><small id="leftNote"></small></div>
+</div>
+<div id="list"></div>
+<button class="add" id="addBtn" type="button">＋ 상품 추가</button>
+<footer>· 가격은 면세점 앱에서 보고 <b>달러($)</b>로 입력해줘. 최종가 = 가격 × (1 − 할인율) − 적립금<br>· 체크 해제한 상품은 합계에서 빠져<br>· 입력한 내용은 이 폰에만 저장돼</footer>
+</div>
+
+<div class="sheet" id="sheet" hidden><form id="sf"></form></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const KEY="df-v1";
+const DEF={rate:1400,limit:800,shops:["롯데","신라","신세계","현대"],items:[
+ {id:"i1",name:"리락쿠마 노트북 파우치",memo:"",on:true,p:{}},
+ {id:"i2",name:"리락쿠마 우산",memo:"",on:true,p:{}},
+ {id:"i3",name:"향수",memo:"바이 더 파이어플레이스 / 어나더 13 시향",on:true,p:{}},
+ {id:"i4",name:"네이밍 쉐딩",memo:"",on:true,p:{}},
+ {id:"i5",name:"보조배터리",memo:"",on:true,p:{}},
+ {id:"i6",name:"화장품",memo:"",on:true,p:{}}]};
+let S;try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!S)S=JSON.parse(JSON.stringify(DEF));
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const num=v=>{const n=parseFloat(String(v).replace(/,/g,""));return isFinite(n)?n:0};
+const fin=q=>q&&num(q.price)>0?Math.max(0,num(q.price)*(1-num(q.disc)/100)-num(q.pts)):null;
+const usd=n=>"$"+n.toFixed(2).replace(/\.00$/,"");
+const krw=n=>"₩"+Math.round(n*num(S.rate)).toLocaleString();
+function best(it){let b=null;for(const s of S.shops){const f=fin(it.p[s]);if(f!=null&&(b==null||f<b.f))b={s,f}}return b}
+function render(){
+  $("#rate").value=S.rate;$("#limit").value=S.limit;
+  $("#list").innerHTML=S.items.map(it=>{const b=best(it);
+    const rows=S.shops.filter(s=>it.p[s]&&num(it.p[s].price)>0).map(s=>{const q=it.p[s],f=fin(q);
+      const parts=[usd(num(q.price))];if(num(q.disc))parts.push(`-${num(q.disc)}%`);if(num(q.pts))parts.push(`적립금 -${usd(num(q.pts))}`);
+      return `<div class="row ${b&&b.s===s?"win":""}"><span class="shop">${b&&b.s===s?"👑 ":""}${esc(s)}</span><span class="calc">${parts.join(" ")}</span><span class="fin">${usd(f)}<small>${krw(f)}</small></span></div>`}).join("");
+    return `<div class="card prod ${it.on?"":"off"}"><div class="ph"><input type="checkbox" class="chk" data-on="${it.id}" ${it.on?"checked":""} aria-label="합계 포함"><span class="nm">${esc(it.name)}</span>${b?`<span class="best">최저 ${esc(b.s)}</span>`:""}<button class="btn" data-ed="${it.id}" type="button">✏️ 가격</button></div>${it.memo?`<div class="memo">${esc(it.memo)}</div>`:""}<div class="rows">${rows||`<div class="empty">아직 가격이 없어. ✏️ 눌러서 넣어줘</div>`}</div></div>`}).join("");
+  const tot=S.items.filter(i=>i.on).reduce((a,i)=>{const b=best(i);return a+(b?b.f:0)},0);
+  $("#sumUsd").textContent=usd(tot);$("#sumKrw").textContent=krw(tot);
+  const left=num(S.limit)-tot;$("#left").textContent=(left<0?"-":"")+usd(Math.abs(left));
+  $("#limBox").classList.toggle("over",left<0);$("#leftNote").textContent=left<0?"한도 초과 · 입국할 때 세관 신고 대상":"입국 시 1인 기본 면세 한도 기준";
+}
+$("#rate").addEventListener("change",e=>{S.rate=num(e.target.value)||S.rate;save();render()});
+$("#limit").addEventListener("change",e=>{S.limit=num(e.target.value);save();render()});
+$("#list").addEventListener("change",e=>{const id=e.target.dataset.on;if(!id)return;const it=S.items.find(i=>i.id===id);it.on=e.target.checked;save();render()});
+$("#list").addEventListener("click",e=>{const b=e.target.closest("[data-ed]");if(b)openItem(b.dataset.ed)});
+$("#addBtn").addEventListener("click",()=>openItem(null));
+$("#shopsBtn").addEventListener("click",openShops);
+const sheet=$("#sheet"),sf=$("#sf");const close=()=>{sheet.hidden=true};
+sheet.addEventListener("click",e=>{if(e.target===sheet)close()});
+function openItem(id){
+  const it=id?S.items.find(i=>i.id===id):{id:"i"+Date.now(),name:"",memo:"",on:true,p:{}};let armed=false;
+  sf.innerHTML=`<h3>${id?"가격 입력":"상품 추가"}</h3>
+  <label class="fld"><span>상품 이름</span><input id="f-name" value="${esc(it.name)}" autocomplete="off"></label>
+  <label class="fld"><span>메모 (선택)</span><textarea id="f-memo" rows="2">${esc(it.memo)}</textarea></label>
+  <p class="hint">면세점별로 가격($) · 할인율(%) · 적립금($)을 넣어줘. 없는 곳은 비워두면 돼.</p>
+  ${S.shops.map((s,k)=>{const q=it.p[s]||{};return `<div class="fld"><span>${esc(s)}</span><div class="grid3">
+   <input id="p${k}" inputmode="decimal" placeholder="가격 $" value="${esc(q.price??"")}"><input id="d${k}" inputmode="decimal" placeholder="할인 %" value="${esc(q.disc??"")}"><input id="t${k}" inputmode="decimal" placeholder="적립금 $" value="${esc(q.pts??"")}"></div></div>`}).join("")}
+  <div class="sbtns">${id?`<button type="button" class="btn del" id="sdel">삭제</button>`:""}<span></span><button type="button" class="btn" id="scancel">취소</button><button class="btn pri">저장</button></div>`;
+  sheet.hidden=false;
+  $("#scancel").onclick=close;
+  if(id)$("#sdel").onclick=e=>{if(!armed){armed=true;e.target.textContent="진짜 삭제?";e.target.classList.add("arm");return}S.items=S.items.filter(i=>i.id!==id);save();render();close()};
+  sf.onsubmit=e=>{e.preventDefault();const name=$("#f-name").value.trim();if(!name){$("#f-name").focus();return}
+    it.name=name;it.memo=$("#f-memo").value.trim();it.p={};
+    S.shops.forEach((s,k)=>{const price=$("#p"+k).value.trim();if(price)it.p[s]={price,disc:$("#d"+k).value.trim(),pts:$("#t"+k).value.trim()}});
+    if(!id)S.items.push(it);save();render();close()};
+}
+function openShops(){
+  const draw=()=>{sf.innerHTML=`<h3>면세점 편집</h3><div class="shoplist">${S.shops.map((s,k)=>`<span class="tagx">${esc(s)}<button type="button" data-rm="${k}" aria-label="삭제">✕</button></span>`).join("")}</div>
+  <label class="fld" style="margin-top:12px"><span>면세점 추가 (예: 인천공항, 롯데 인터넷)</span><input id="f-shop" autocomplete="off"></label>
+  <div class="sbtns"><span></span><button type="button" class="btn" id="scancel">닫기</button><button class="btn pri">추가</button></div>`;
+  $("#scancel").onclick=()=>{close();render()};
+  sf.querySelectorAll("[data-rm]").forEach(b=>b.onclick=()=>{S.shops.splice(+b.dataset.rm,1);save();draw()});
+  sf.onsubmit=e=>{e.preventDefault();const v=$("#f-shop").value.trim();if(v&&!S.shops.includes(v)){S.shops.push(v);save()}draw()}};
+  draw();sheet.hidden=false;
+}
+render();
+if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script>
+</body></html>
