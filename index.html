@@ -35,10 +35,10 @@ h1{font-family:var(--display);font-weight:400;font-size:27px;line-height:1;lette
 h1 .heart{color:#e0484a}
 .dd{font-family:var(--display);font-size:15px;color:var(--seal);border:1.5px solid var(--seal);border-radius:6px;padding:3px 8px;transform:rotate(-3deg);white-space:nowrap}
 .meta{font-size:12.5px;color:var(--muted);margin-top:4px}
-.days{display:flex;gap:6px;margin-top:12px;overflow-x:auto;scrollbar-width:none}
+.days{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px}
 .days::-webkit-scrollbar{display:none}
 .days[hidden]{display:none}
-.chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;font:500 13px var(--body);cursor:pointer}
+.chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 10px;text-align:center;white-space:nowrap;font:500 13px var(--body);cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--sea);color:var(--bg);border-color:var(--sea)}
 .chip:focus-visible,.tab:focus-visible,.copy:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
 section{padding-top:14px}
