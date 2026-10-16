@@ -264,7 +264,7 @@ function renderPlan(){
   else{
     h+=`<div class="card"><div class="tl">${evs.length?evs.map(e=>`<div class="ev ${esc(e.kind)}"><div class="time">${esc(e.time)}${e.end?`<small>~${esc(e.end)}</small>`:""}</div>
       <div style="min-width:0"><div class="ttl">${esc(e.title)}${e.zh?`<span class="zhname" data-copy="${esc(e.zh)}" title="눌러서 복사">${esc(e.zh)}</span>`:""}${e.badge?`<span class="badge">${esc(e.badge)}</span>`:""}</div>
-      ${e.addr?`<div class="addr cpy" data-copy="${esc(e.addr)}" title="눌러서 복사">${esc(e.addr)} <span class="cpi">⧉</span></div>`:""}${e.loc?`<div class="dist">📍 ${esc(e.loc)}</div>`:""}${e.memo?`<div class="memo ${hasZh(e.memo)?"zh":""}">${esc(e.memo)}</div>`:""}${linksOf(e).length?`<div class="elinks">${linksOf(e).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">🔗 블로그${linksOf(e).length>1?" "+(i+1):""}</a>`).join("")}</div>`:""}</div>
+      ${e.addr?`<div class="addr cpy" data-copy="${esc(e.addr)}" title="눌러서 복사">${esc(e.addr)}</div>`:""}${e.loc?`<div class="dist">📍 ${esc(e.loc)}</div>`:""}${e.memo?`<div class="memo ${hasZh(e.memo)?"zh":""}">${esc(e.memo)}</div>`:""}${linksOf(e).length?`<div class="elinks">${linksOf(e).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">🔗 블로그${linksOf(e).length>1?" "+(i+1):""}</a>`).join("")}</div>`:""}</div>
       <div>${pen("events",e.id)}</div></div>`).join(""):`<div class="empty">아직 일정이 없어</div>`}</div></div>${addBtn("events","일정 추가")}`;
   }
   $("#p-plan").innerHTML=h;
@@ -280,7 +280,7 @@ function renderPlaces(){
   const list=P.filter(p=>cat==="전체"||p.cat===cat);
   $("#p-place").innerHTML=`<div class="filters">${cats.map(c=>`<button class="chip" aria-pressed="${c===cat}" data-c="${esc(c)}">${esc(c)}</button>`).join("")}</div>
   <div class="places">${list.map(p=>`<div class="card place"><div><span class="cat">${esc(p.cat)}</span><div class="nm">${esc(p.ko)}</div></div>
-   <button class="copy" data-t="${esc(p.zh)}">중국어 복사</button><div style="grid-row:1/3;grid-column:3">${pen("places",p.id)}</div><div class="cn">${esc(p.zh)}</div>${p.addr?`<div class="ad cpy" data-copy="${esc(p.addr)}" title="눌러서 복사">${esc(p.addr)} <span class="cpi">⧉</span></div>`:""}${p.loc?`<div class="loc">📍 ${esc(p.loc)}</div>`:""}</div>`).join("")||`<div class="empty">장소가 없어</div>`}</div>${addBtn("places","장소 추가")}`;
+   <button class="copy" data-t="${esc(p.zh)}">중국어 복사</button><div style="grid-row:1/3;grid-column:3">${pen("places",p.id)}</div><div class="cn">${esc(p.zh)}</div>${p.addr?`<div class="ad cpy" data-copy="${esc(p.addr)}" title="눌러서 복사">${esc(p.addr)}</div>`:""}${p.loc?`<div class="loc">📍 ${esc(p.loc)}</div>`:""}</div>`).join("")||`<div class="empty">장소가 없어</div>`}</div>${addBtn("places","장소 추가")}`;
 }
 function toast(msg){let t=document.getElementById("toast");if(!t){t=document.createElement("div");t.id="toast";document.body.appendChild(t)}
   t.textContent=msg;t.classList.add("show");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("show"),1500)}
