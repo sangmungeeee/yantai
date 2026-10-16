@@ -55,14 +55,15 @@ section{padding-top:14px}
 .badge{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--gold-soft);color:var(--gold);margin-left:6px;vertical-align:2px}
 .kind{font-size:11px;color:var(--muted);letter-spacing:.06em}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-.places{display:flex;flex-direction:column;gap:8px}
-.place{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:start}
-.place .nm{font-weight:700}
-.place .cn{font-family:var(--zh);font-size:16px;color:var(--sea);overflow-wrap:anywhere;grid-column:1/2}
+.places{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.places .empty{grid-column:1/-1}
+.place{display:grid;grid-template-columns:1fr auto;gap:4px 6px;align-items:start;padding:12px;min-width:0}
+.place .nm{font-weight:700;word-break:keep-all}
+.place .cn{font-family:var(--zh);font-size:16px;color:var(--sea);overflow-wrap:anywhere;grid-column:1/-1}
 .place .ad{font-family:var(--zh);font-size:12px;color:var(--muted);overflow-wrap:anywhere;grid-column:1/-1}
 .place .loc{font-size:12px;color:var(--ink);grid-column:1/-1}
 .cat{font-size:11px;font-weight:700;color:var(--seal);letter-spacing:.04em}
-.copy{grid-row:1/3;grid-column:2;border:1px solid var(--sea);background:transparent;color:var(--sea);border-radius:8px;padding:6px 10px;font:500 12.5px var(--body);cursor:pointer;white-space:nowrap}
+.copy{grid-row:1/2;grid-column:2;border:1px solid var(--sea);background:transparent;color:var(--sea);border-radius:8px;padding:6px 10px;font:500 12.5px var(--body);cursor:pointer;white-space:nowrap}
 .copy.done{background:var(--sea);color:var(--bg)}
 .filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
 .grp{margin-bottom:14px}
@@ -280,7 +281,7 @@ function renderPlaces(){
   const list=P.filter(p=>cat==="전체"||p.cat===cat);
   $("#p-place").innerHTML=`<div class="filters">${cats.map(c=>`<button class="chip" aria-pressed="${c===cat}" data-c="${esc(c)}">${esc(c)}</button>`).join("")}</div>
   <div class="places">${list.map(p=>`<div class="card place"><div><span class="cat">${esc(p.cat)}</span><div class="nm">${esc(p.ko)}</div></div>
-   <button class="copy" data-t="${esc(p.zh)}">중국어 복사</button><div style="grid-row:1/3;grid-column:3">${pen("places",p.id)}</div><div class="cn">${esc(p.zh)}</div>${p.addr?`<div class="ad cpy" data-copy="${esc(p.addr)}" title="눌러서 복사">${esc(p.addr)}</div>`:""}${p.loc?`<div class="loc">📍 ${esc(p.loc)}</div>`:""}</div>`).join("")||`<div class="empty">장소가 없어</div>`}</div>${addBtn("places","장소 추가")}`;
+   <button class="copy" data-t="${esc(p.zh)}">복사</button><div style="grid-row:1/2;grid-column:3">${pen("places",p.id)}</div><div class="cn">${esc(p.zh)}</div>${p.addr?`<div class="ad cpy" data-copy="${esc(p.addr)}" title="눌러서 복사">${esc(p.addr)}</div>`:""}${p.loc?`<div class="loc">📍 ${esc(p.loc)}</div>`:""}</div>`).join("")||`<div class="empty">장소가 없어</div>`}</div>${addBtn("places","장소 추가")}`;
 }
 function toast(msg){let t=document.getElementById("toast");if(!t){t=document.createElement("div");t.id="toast";document.body.appendChild(t)}
   t.textContent=msg;t.classList.add("show");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("show"),1500)}
@@ -294,7 +295,7 @@ async function copyText(t,el,reset){
 }
 $("#p-place").addEventListener("click",e=>{
   const c=e.target.closest(".chip");if(c){cat=c.dataset.c;renderPlaces();return}
-  const b=e.target.closest(".copy");if(b){copyText(b.dataset.t,b,"중국어 복사");return}
+  const b=e.target.closest(".copy");if(b){copyText(b.dataset.t,b,"복사");return}
   const a=e.target.closest(".cpy");if(a)copyText(a.dataset.copy,a);
 });
 $("#p-plan").addEventListener("click",e=>{const z=e.target.closest(".zhname,.cpy");if(z)copyText(z.dataset.copy,z)});
