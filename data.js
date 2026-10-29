@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 10;
+window.TRIP_REV = 11;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -1048,6 +1048,51 @@ window.TRIP = {
    "sub": "",
    "done": false,
    "o": 605,
+   "sec": "todo",
+   "top": "구매 리스트"
+  },
+  "b005": {
+   "grp": "타오바오",
+   "name": "가방",
+   "sub": "",
+   "done": false,
+   "o": 505,
+   "sec": "todo",
+   "top": "구매 리스트"
+  },
+  "b006": {
+   "grp": "타오바오",
+   "name": "케이스",
+   "sub": "",
+   "done": false,
+   "o": 506,
+   "sec": "todo",
+   "top": "구매 리스트"
+  },
+  "b007": {
+   "grp": "타오바오",
+   "name": "인형파우치",
+   "sub": "",
+   "done": false,
+   "o": 507,
+   "sec": "todo",
+   "top": "구매 리스트"
+  },
+  "b200": {
+   "grp": "무신사",
+   "name": "신발",
+   "sub": "",
+   "done": false,
+   "o": 700,
+   "sec": "todo",
+   "top": "구매 리스트"
+  },
+  "b201": {
+   "grp": "무신사",
+   "name": "경량패딩",
+   "sub": "",
+   "done": false,
+   "o": 701,
    "sec": "todo",
    "top": "구매 리스트"
   }
