@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 11;
+window.TRIP_REV = 12;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -222,7 +222,7 @@ window.TRIP = {
    "addr": "海滨路海滨公园广场大三角建筑负1层(八角湾国际…)",
    "loc": "",
    "memo": "",
-   "links": "",
+   "links": "https://blog.naver.com/cyworld_kyung/224402476942",
    "kind": "",
    "badge": "",
    "o": 3
@@ -774,13 +774,13 @@ window.TRIP = {
   "c003": {
    "done": false,
    "grp": "확인사항",
-   "name": "봉래각 · 삼선산 입장권 (트립닷컴)",
+   "name": "봉래각 · 삼선산 · 팔선과해 입장권",
    "o": 3,
    "sec": "todo",
    "sub": ""
   },
   "c004": {
-   "done": false,
+   "done": true,
    "grp": "확인사항",
    "name": "항공권/숙소 바우처 저장",
    "o": 4,
@@ -806,13 +806,13 @@ window.TRIP = {
   "c007": {
    "done": false,
    "grp": "확인사항",
-   "name": "이심 (4일치)",
+   "name": "이심",
    "o": 101,
    "sec": "todo",
    "sub": ""
   },
   "c008": {
-   "done": true,
+   "done": false,
    "grp": "확인사항",
    "name": "알리, 위챗, 따종, 바이두 확인",
    "o": 102,
@@ -1019,7 +1019,7 @@ window.TRIP = {
    "grp": "면세점",
    "name": "향수",
    "sub": "",
-   "done": false,
+   "done": true,
    "o": 602,
    "sec": "todo",
    "top": "구매 리스트"
@@ -1091,8 +1091,26 @@ window.TRIP = {
    "grp": "무신사",
    "name": "경량패딩",
    "sub": "",
-   "done": false,
+   "done": true,
    "o": 701,
+   "sec": "todo",
+   "top": "구매 리스트"
+  },
+  "b106": {
+   "grp": "면세점",
+   "name": "선크림",
+   "sub": "",
+   "done": false,
+   "o": 606,
+   "sec": "todo",
+   "top": "구매 리스트"
+  },
+  "b202": {
+   "grp": "무신사",
+   "name": "옷",
+   "sub": "",
+   "done": false,
+   "o": 702,
    "sec": "todo",
    "top": "구매 리스트"
   }
