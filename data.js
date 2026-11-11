@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 28;
+window.TRIP_REV = 29;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -698,7 +698,7 @@ window.TRIP = {
   "p018": {
    "cat": "카페",
    "ko": "딥 커피",
-   "zh": "DEEP·COFFEE",
+   "zh": "DEEP·COFFEE(万科翡翠店)",
    "addr": "西山路80号附131号",
    "loc": "확인 필요",
    "o": 18
