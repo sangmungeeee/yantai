@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 46;
+window.TRIP_REV = 47;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -520,6 +520,48 @@ window.TRIP = {
    "kind": "move",
    "badge": "",
    "o": 10
+  },
+  "n0_night": {
+   "end": "",
+   "zh": "",
+   "addr": "",
+   "loc": "",
+   "memo": "숙소 앞 · 도보 · 저녁 배달 먹었으니 구경 + 간식 정도로",
+   "links": "",
+   "kind": "",
+   "badge": "",
+   "day": 0,
+   "time": "20:00",
+   "title": "완다몰 야시장 (산책)",
+   "o": 12
+  },
+  "n2_mvnm": {
+   "end": "",
+   "zh": "",
+   "addr": "",
+   "loc": "",
+   "memo": "택시 약 10~15분",
+   "links": "",
+   "kind": "move",
+   "badge": "",
+   "day": 2,
+   "time": "18:00",
+   "title": "연태역 → 야시장 이동",
+   "o": 10
+  },
+  "n2_night": {
+   "end": "",
+   "zh": "幸福夜市(幸福广场店)",
+   "addr": "山东省烟台市芝罘区幸福街道幸福中路43号",
+   "loc": "",
+   "memo": "연태역에서 택시 약 10~15분 · 숙소까지 택시 20~25분",
+   "links": "https://blog.naver.com/nowk_slowly/224405346383 https://blog.naver.com/owoouo/224342143925",
+   "kind": "food",
+   "badge": "",
+   "day": 2,
+   "time": "18:30",
+   "title": "저녁 - 행복 야시장",
+   "o": 11
   }
  },
  "days": {
