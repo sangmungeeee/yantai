@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 45;
+window.TRIP_REV = 46;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -142,20 +142,6 @@ window.TRIP = {
    "kind": "food",
    "badge": "",
    "o": 11
-  },
-  "n0_010": {
-   "day": 0,
-   "time": "20:00",
-   "end": "",
-   "title": "행복 야시장 (선택)",
-   "zh": "幸福夜市(幸福广场店)",
-   "addr": "山东省烟台市芝罘区幸福街道幸福中路43号",
-   "loc": "",
-   "memo": "숙소 기준 택시 20~25분",
-   "links": "https://blog.naver.com/nowk_slowly/224405346383\nhttps://blog.naver.com/owoouo/224342143925",
-   "kind": "",
-   "badge": "",
-   "o": 12
   },
   "n1_000": {
    "day": 1,
