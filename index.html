@@ -350,7 +350,7 @@ function renderLinks(){
 }
 
 // ---------- Expenses (노션 지출목록)
-const RATE=195; // 1위안 ≈ 원 (대략)
+const RATE=200; // 1위안 ≈ 원 (대략)
 const won=n=>Math.round(n).toLocaleString("ko-KR")+"원";
 const fmtAmt=x=>x.amt===""||x.amt==null?"미정":(x.cur==="CNY"?"¥"+Number(x.amt).toLocaleString("ko-KR"):won(+x.amt));
 const toKRW=x=>x.amt===""||x.amt==null?0:(x.cur==="CNY"?+x.amt*RATE:+x.amt);
