@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 44;
+window.TRIP_REV = 45;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -133,12 +133,12 @@ window.TRIP = {
    "day": 0,
    "time": "19:00",
    "end": "",
-   "title": "저녁 - 북개선생",
-   "zh": "北丐先生·野馄饨·烧烤(芝罘区万达店)",
-   "addr": "西关南街6号万达广场3楼",
+   "title": "저녁 - 배달 (도미노피자 + 양꼬치 + 양쯔깐루 + 북개선생)",
+   "zh": "",
+   "addr": "",
    "loc": "",
-   "memo": "완다몰 3층",
-   "links": "",
+   "memo": "숙소에서 배달로 먹기 (메이투안)\n북개선생 北丐先生·野馄饨·烧烤(芝罘区万达店)",
+   "links": "https://m.blog.naver.com/dogguthird/224406793365",
    "kind": "food",
    "badge": "",
    "o": 11
@@ -525,29 +525,15 @@ window.TRIP = {
    "day": 0,
    "time": "18:30",
    "end": "",
-   "title": "만상성 → 북개선생 이동",
+   "title": "만상성 → 숙소 이동",
    "zh": "",
    "addr": "",
    "loc": "",
-   "memo": "택시 약 20분 · 완다몰 3층",
+   "memo": "택시 약 20분",
    "links": "",
    "kind": "move",
    "badge": "",
    "o": 10
-  },
-  "n0_011": {
-   "day": 0,
-   "time": "21:00",
-   "end": "",
-   "title": "배달음식",
-   "zh": "",
-   "addr": "",
-   "loc": "",
-   "memo": "양쯔깐루, 양꼬치",
-   "links": "https://m.blog.naver.com/dogguthird/224406793365",
-   "kind": "food",
-   "badge": "",
-   "o": 13
   }
  },
  "days": {
