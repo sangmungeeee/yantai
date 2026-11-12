@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 49;
+window.TRIP_REV = 50;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -1303,6 +1303,11 @@ window.TRIP = {
    "title": "중국 연태 오션뷰 감성맛집户粒咖啡 후리카페 가격 메뉴 후기",
    "url": "https://blog.naver.com/kkamjjik_ss/224449867251",
    "o": 15
+  },
+  "l016": {
+   "title": "연태 여행 블로그 (l22natur2)",
+   "url": "https://blog.naver.com/l22natur2/224463638396",
+   "o": 16
   }
  },
  "expenses": {
