@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 47;
+window.TRIP_REV = 48;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -131,7 +131,7 @@ window.TRIP = {
   },
   "n0_009": {
    "day": 0,
-   "time": "19:00",
+   "time": "20:00",
    "end": "",
    "title": "저녁 - 배달 (도미노피자 + 양꼬치 + 양쯔깐루 + 북개선생)",
    "zh": "",
@@ -141,7 +141,7 @@ window.TRIP = {
    "links": "https://m.blog.naver.com/dogguthird/224406793365",
    "kind": "food",
    "badge": "",
-   "o": 11
+   "o": 12
   },
   "n1_000": {
    "day": 1,
@@ -511,7 +511,7 @@ window.TRIP = {
    "day": 0,
    "time": "18:30",
    "end": "",
-   "title": "만상성 → 숙소 이동",
+   "title": "만상성 → 완다몰 이동",
    "zh": "",
    "addr": "",
    "loc": "",
@@ -526,14 +526,14 @@ window.TRIP = {
    "zh": "",
    "addr": "",
    "loc": "",
-   "memo": "숙소 앞 · 도보 · 저녁 배달 먹었으니 구경 + 간식 정도로",
+   "memo": "숙소 앞 · 도보 · 완다몰 쇼핑 + 야시장 구경",
    "links": "",
    "kind": "",
    "badge": "",
    "day": 0,
-   "time": "20:00",
-   "title": "완다몰 야시장 (산책)",
-   "o": 12
+   "time": "19:00",
+   "title": "완다몰 · 야시장 구경",
+   "o": 11
   },
   "n2_mvnm": {
    "end": "",
