@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 29;
+window.TRIP_REV = 30;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -117,21 +117,21 @@ window.TRIP = {
   },
   "n0_008": {
    "day": 0,
-   "time": "17:00",
-   "end": "",
-   "title": "완다몰 쇼핑",
-   "zh": "",
-   "addr": "",
+   "time": "17:30",
+   "end": "18:30",
+   "title": "만상성 · 스티커 사진",
+   "zh": "定格瞬间",
+   "addr": "烟台市清泉路万象城步行街东段二楼27-2-104",
    "loc": "",
-   "memo": "어두워지면 실내 쇼핑",
+   "memo": "만상성(万象城) 구경 + 스티커 사진 · 보행자 거리 동쪽 2층 · 12:00~21:00",
    "links": "",
-   "kind": "",
+   "kind": "spot",
    "badge": "",
-   "o": 8
+   "o": 9
   },
   "n0_009": {
    "day": 0,
-   "time": "18:30",
+   "time": "19:00",
    "end": "",
    "title": "저녁 - 북개선생",
    "zh": "北丐先生·野馄饨·烧烤(芝罘区万达店)",
@@ -141,7 +141,7 @@ window.TRIP = {
    "links": "",
    "kind": "food",
    "badge": "",
-   "o": 9
+   "o": 11
   },
   "n0_010": {
    "day": 0,
@@ -155,7 +155,7 @@ window.TRIP = {
    "links": "https://blog.naver.com/nowk_slowly/224405346383\nhttps://blog.naver.com/owoouo/224342143925",
    "kind": "",
    "badge": "",
-   "o": 10
+   "o": 12
   },
   "n0_011": {
    "day": 0,
@@ -169,7 +169,7 @@ window.TRIP = {
    "links": "https://m.blog.naver.com/dogguthird/224406793365",
    "kind": "food",
    "badge": "",
-   "o": 11
+   "o": 13
   },
   "n1_000": {
    "day": 1,
@@ -534,6 +534,34 @@ window.TRIP = {
    "kind": "food",
    "badge": "",
    "o": 0
+  },
+  "n0_mv1": {
+   "day": 0,
+   "time": "17:00",
+   "end": "",
+   "title": "조양가 → 만상성 이동",
+   "zh": "",
+   "addr": "",
+   "loc": "",
+   "memo": "택시 약 20분",
+   "links": "",
+   "kind": "move",
+   "badge": "",
+   "o": 8
+  },
+  "n0_mv2": {
+   "day": 0,
+   "time": "18:30",
+   "end": "",
+   "title": "만상성 → 북개선생 이동",
+   "zh": "",
+   "addr": "",
+   "loc": "",
+   "memo": "택시 약 20분 · 완다몰 3층",
+   "links": "",
+   "kind": "move",
+   "badge": "",
+   "o": 10
   }
  },
  "days": {
