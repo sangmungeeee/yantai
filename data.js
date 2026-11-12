@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 51;
+window.TRIP_REV = 52;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -1305,9 +1305,14 @@ window.TRIP = {
    "o": 15
   },
   "l016": {
-   "title": "배달음식",
+   "title": "완다몰 야시장",
    "url": "https://blog.naver.com/l22natur2/224463638396",
    "o": 16
+  },
+  "l017": {
+   "title": "배달음식",
+   "url": "https://m.blog.naver.com/yum_my100/224464572324",
+   "o": 17
   }
  },
  "expenses": {
