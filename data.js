@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 39;
+window.TRIP_REV = 40;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -888,7 +888,7 @@ window.TRIP = {
    "sub": ""
   },
   "c007": {
-   "done": false,
+   "done": true,
    "grp": "확인사항",
    "name": "이심",
    "o": 101,
@@ -1355,11 +1355,11 @@ window.TRIP = {
   "x006": {
    "type": "🎡 기타",
    "name": "이심",
-   "amt": "",
+   "amt": 11200,
    "cur": "KRW",
-   "paid": false,
+   "paid": true,
    "date": "11/19",
-   "memo": "모비",
+   "memo": "모비 · 중국 무제한 4일 (홍콩 로밍, VPN 필요 없음) · 현지 자정마다 1일 차감",
    "o": 6
   },
   "x007": {
