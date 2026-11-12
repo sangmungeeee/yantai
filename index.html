@@ -199,7 +199,8 @@ const ls={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return 
 const old=ls.get("yt-checks");if(old){for(const k in old)if(DATA.checks[k])DATA.checks[k].done=old[k];try{localStorage.removeItem("yt-checks")}catch(e){}}
 // 노션 새 버전(data.js)에 앱에서 저장한 체크 표시·직접 추가한 항목을 얹기
 function fresh(saved){const out=JSON.parse(JSON.stringify(window.TRIP));const sc=(saved&&saved.checks)||{};
-  for(const id in sc){if(out.checks[id])out.checks[id].done=!!sc[id].done||!!out.checks[id].done;else out.checks[id]=sc[id];}return out;}
+  for(const id in sc){if(out.checks[id])out.checks[id].done=!!sc[id].done||!!out.checks[id].done;else out.checks[id]=sc[id];}
+  const sx=(saved&&saved.expenses)||{};out.expenses??={};for(const id in sx){if(out.expenses[id])out.expenses[id].paid=!!sx[id].paid||!!out.expenses[id].paid;else out.expenses[id]=sx[id];}return out;}
 // prune 표시된 항목: 이 폰에서 체크 안 했으면 지우고, 체크했으면 남김 (새 버전 받을 때 한 번만)
 function prune(D){const c=D.checks||{};for(const id in c){if(!c[id].prune)continue;if(c[id].done)delete c[id].prune;else delete c[id];}return D;}
 const cached=ls.get(LS);if(cached&&cached.base>=REV)DATA=cached.data;
