@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 34;
+window.TRIP_REV = 33;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -1102,8 +1102,7 @@ window.TRIP = {
    "done": false,
    "o": 600,
    "sec": "todo",
-   "top": "구매 리스트",
-   "del": true
+   "top": "구매 리스트"
   },
   "b101": {
    "grp": "면세점",
@@ -1112,8 +1111,7 @@ window.TRIP = {
    "done": false,
    "o": 601,
    "sec": "todo",
-   "top": "구매 리스트",
-   "del": true
+   "top": "구매 리스트"
   },
   "b102": {
    "grp": "면세점",
@@ -1131,8 +1129,7 @@ window.TRIP = {
    "done": false,
    "o": 603,
    "sec": "todo",
-   "top": "구매 리스트",
-   "del": true
+   "top": "구매 리스트"
   },
   "b104": {
    "grp": "면세점",
@@ -1141,8 +1138,7 @@ window.TRIP = {
    "done": false,
    "o": 604,
    "sec": "todo",
-   "top": "구매 리스트",
-   "del": true
+   "top": "구매 리스트"
   },
   "b105": {
    "grp": "면세점",
@@ -1151,8 +1147,7 @@ window.TRIP = {
    "done": false,
    "o": 605,
    "sec": "todo",
-   "top": "구매 리스트",
-   "del": true
+   "top": "구매 리스트"
   },
   "b005": {
    "grp": "타오바오",
@@ -1188,8 +1183,7 @@ window.TRIP = {
    "done": false,
    "o": 700,
    "sec": "todo",
-   "top": "구매 리스트",
-   "del": true
+   "top": "구매 리스트"
   },
   "b201": {
    "grp": "무신사",
@@ -1207,8 +1201,7 @@ window.TRIP = {
    "done": false,
    "o": 606,
    "sec": "todo",
-   "top": "구매 리스트",
-   "del": true
+   "top": "구매 리스트"
   },
   "b202": {
    "grp": "무신사",
@@ -1217,8 +1210,7 @@ window.TRIP = {
    "done": false,
    "o": 702,
    "sec": "todo",
-   "top": "구매 리스트",
-   "del": true
+   "top": "구매 리스트"
   }
  },
  "links": {

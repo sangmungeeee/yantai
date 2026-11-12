@@ -320,7 +320,7 @@ function renderCheck(){
   const w=waiting();
   [["todo","#p-todo","완료","예약 · 환전 등"],["bag","#p-check","완료","짐"]].forEach(([sec,el,lbl])=>{
   if(w){$(el).innerHTML=w;return}
-  const C=[...S.checks].filter(c=>!c.del&&secOf(c)===sec).sort(byO);const grps=[...new Set(C.map(c=>c.grp||"기타"))];
+  const C=[...S.checks].filter(c=>secOf(c)===sec).sort(byO);const grps=[...new Set(C.map(c=>c.grp||"기타"))];
   const n=C.filter(c=>c.done).length;
   $(el).innerHTML=`<div class="prog">${lbl} ${n} / ${C.length}<div class="bar"><i style="width:${C.length?n/C.length*100:0}%"></i></div></div>`+
   (()=>{const item=c=>`<label class="ck"><input type="checkbox" id="c-${esc(c.id)}" data-k="${esc(c.id)}" ${c.done?"checked":""}><span>${esc(c.name)}${c.sub?`<span class="sub">${esc(c.sub)}</span>`:""}</span>${pen("checks",c.id)}</label>`;
