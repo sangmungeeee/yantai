@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 55;
+window.TRIP_REV = 56;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -43,7 +43,7 @@ window.TRIP = {
    "links": "",
    "kind": "",
    "badge": "",
-   "o": 2
+   "o": 3
   },
   "n0_003": {
    "day": 0,
@@ -57,7 +57,7 @@ window.TRIP = {
    "links": "",
    "kind": "key",
    "badge": "",
-   "o": 3
+   "o": 4
   },
   "n0_004": {
    "day": 0,
@@ -71,7 +71,7 @@ window.TRIP = {
    "links": "https://blog.naver.com/nov9206/224358415095",
    "kind": "move",
    "badge": "",
-   "o": 4
+   "o": 5
   },
   "n0_005": {
    "day": 0,
@@ -85,7 +85,7 @@ window.TRIP = {
    "links": "",
    "kind": "",
    "badge": "",
-   "o": 5
+   "o": 6
   },
   "n0_006": {
    "day": 0,
@@ -99,7 +99,7 @@ window.TRIP = {
    "links": "",
    "kind": "food",
    "badge": "",
-   "o": 6
+   "o": 7
   },
   "n0_007": {
    "day": 0,
@@ -113,7 +113,7 @@ window.TRIP = {
    "links": "",
    "kind": "",
    "badge": "",
-   "o": 7
+   "o": 8
   },
   "n0_008": {
    "day": 0,
@@ -127,7 +127,7 @@ window.TRIP = {
    "links": "",
    "kind": "spot",
    "badge": "",
-   "o": 9
+   "o": 10
   },
   "n0_009": {
    "day": 0,
@@ -141,7 +141,7 @@ window.TRIP = {
    "links": "https://m.blog.naver.com/yum_my100/224464572324 https://m.blog.naver.com/dogguthird/224406793365",
    "kind": "food",
    "badge": "",
-   "o": 12
+   "o": 13
   },
   "n1_000": {
    "day": 1,
@@ -505,7 +505,7 @@ window.TRIP = {
    "links": "",
    "kind": "move",
    "badge": "",
-   "o": 8
+   "o": 9
   },
   "n0_mv2": {
    "day": 0,
@@ -519,7 +519,7 @@ window.TRIP = {
    "links": "",
    "kind": "move",
    "badge": "",
-   "o": 10
+   "o": 11
   },
   "n0_night": {
    "end": "",
@@ -533,7 +533,7 @@ window.TRIP = {
    "day": 0,
    "time": "19:00",
    "title": "완다몰 · 야시장 구경",
-   "o": 11
+   "o": 12
   },
   "n2_mvnm": {
    "end": "",
@@ -576,6 +576,20 @@ window.TRIP = {
    "time": "18:00",
    "title": "조이시티 구경",
    "o": 10
+  },
+  "emwhnw1xf": {
+   "day": 0,
+   "time": "08:30",
+   "end": "",
+   "title": "오즈모 픽업",
+   "zh": "",
+   "addr": "",
+   "loc": "",
+   "memo": "",
+   "links": "",
+   "kind": "",
+   "badge": "",
+   "o": 2
   }
  },
  "days": {
