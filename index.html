@@ -72,6 +72,7 @@ section{padding-top:14px}
 .ck:last-child{border-bottom:none}
 .ck input{width:18px;height:18px;margin-top:2px;accent-color:var(--ok);flex:none}
 .ck .sub{display:block;font-size:12.5px;color:var(--muted)}
+.ck.child{padding-left:30px}.ck.child span{font-size:13.5px}
 .ck input:checked + span{color:var(--muted);text-decoration:line-through}
 .sumc{display:grid;gap:6px;margin-bottom:14px}
 .sumc div{display:flex;justify-content:space-between;align-items:baseline;font-size:14px}
@@ -328,12 +329,13 @@ function renderCheck(){
   const C=[...S.checks].filter(c=>secOf(c)===sec).sort(byO);const grps=[...new Set(C.map(c=>c.grp||"기타"))];
   const n=C.filter(c=>c.done).length;
   $(el).innerHTML=`<div class="prog">${lbl} ${n} / ${C.length}<div class="bar"><i style="width:${C.length?n/C.length*100:0}%"></i></div></div>`+
-  (()=>{const item=c=>`<label class="ck"><input type="checkbox" id="c-${esc(c.id)}" data-k="${esc(c.id)}" ${c.done?"checked":""}><span>${esc(c.name)}${c.sub?`<span class="sub">${esc(c.sub)}</span>`:""}</span>${pen("checks",c.id)}</label>`;
+  (()=>{const item=c=>`<label class="ck${c.par?" child":""}"><input type="checkbox" id="c-${esc(c.id)}" data-k="${esc(c.id)}" ${c.done?"checked":""}><span>${esc(c.name)}${c.sub?`<span class="sub">${esc(c.sub)}</span>`:""}</span>${pen("checks",c.id)}</label>`;
+   const tree=L=>L.filter(c=>!c.par||!L.some(p=>p.id===c.par)).map(c=>item(c)+L.filter(x=>x.par===c.id).map(item).join("")).join("");
    const tops=[...new Set(C.map(c=>c.top||c.grp||"기타"))];
    return tops.map(t=>{const T=C.filter(c=>(c.top||c.grp||"기타")===t);const subs=[...new Set(T.map(c=>c.grp||"기타"))];
      const head=tops.length>1?`<h3 class="top">${esc(t)}</h3>`:"";
-     if(subs.length===1&&subs[0]===t)return `<div class="grp">${head}<div class="card">${T.map(item).join("")}</div></div>`;
-     return `<div class="grp">${head}${subs.map(g=>`<h4 class="subg">${esc(g)}</h4><div class="card">${T.filter(c=>(c.grp||"기타")===g).map(item).join("")}</div>`).join("")}</div>`;}).join("")})()+
+     if(subs.length===1&&subs[0]===t)return `<div class="grp">${head}<div class="card">${tree(T)}</div></div>`;
+     return `<div class="grp">${head}${subs.map(g=>`<h4 class="subg">${esc(g)}</h4><div class="card">${tree(T.filter(c=>(c.grp||"기타")===g))}</div>`).join("")}</div>`;}).join("")})()+
    addBtn("checks","항목 추가",`data-sec="${sec}"`);});
 }
 const busy=new Set();
