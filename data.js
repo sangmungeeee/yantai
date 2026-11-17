@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 61;
+window.TRIP_REV = 62;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -908,7 +908,7 @@ window.TRIP = {
    "sub": ""
   },
   "c006": {
-   "done": false,
+   "done": true,
    "grp": "확인사항",
    "name": "환전 (트래블로그)",
    "o": 100,
@@ -1068,17 +1068,8 @@ window.TRIP = {
    "grp": "타오바오",
    "name": "속눈썹",
    "sub": "",
-   "done": false,
+   "done": true,
    "o": 500,
-   "sec": "todo",
-   "top": "구매 리스트"
-  },
-  "b001": {
-   "grp": "타오바오",
-   "name": "휴지",
-   "sub": "",
-   "done": false,
-   "o": 501,
    "sec": "todo",
    "top": "구매 리스트"
   },
@@ -1086,7 +1077,7 @@ window.TRIP = {
    "grp": "타오바오",
    "name": "퍼프",
    "sub": "",
-   "done": false,
+   "done": true,
    "o": 502,
    "sec": "todo",
    "top": "구매 리스트"
@@ -1095,7 +1086,7 @@ window.TRIP = {
    "grp": "타오바오",
    "name": "투도어펀",
    "sub": "",
-   "done": false,
+   "done": true,
    "o": 503,
    "sec": "todo",
    "top": "구매 리스트"
@@ -1104,7 +1095,7 @@ window.TRIP = {
    "grp": "타오바오",
    "name": "화장품",
    "sub": "",
-   "done": false,
+   "done": true,
    "o": 504,
    "sec": "todo",
    "top": "구매 리스트"
@@ -1169,30 +1160,12 @@ window.TRIP = {
    "top": "구매 리스트",
    "prune": true
   },
-  "b005": {
-   "grp": "타오바오",
-   "name": "가방",
-   "sub": "",
-   "done": false,
-   "o": 505,
-   "sec": "todo",
-   "top": "구매 리스트"
-  },
   "b006": {
    "grp": "타오바오",
    "name": "케이스",
    "sub": "",
-   "done": false,
+   "done": true,
    "o": 506,
-   "sec": "todo",
-   "top": "구매 리스트"
-  },
-  "b007": {
-   "grp": "타오바오",
-   "name": "인형파우치",
-   "sub": "",
-   "done": false,
-   "o": 507,
    "sec": "todo",
    "top": "구매 리스트"
   },
@@ -1235,6 +1208,33 @@ window.TRIP = {
    "sec": "todo",
    "top": "구매 리스트",
    "prune": true
+  },
+  "b008": {
+   "grp": "타오바오",
+   "sub": "",
+   "done": true,
+   "sec": "todo",
+   "top": "구매 리스트",
+   "name": "초콜릿",
+   "o": 508
+  },
+  "b009": {
+   "grp": "타오바오",
+   "sub": "",
+   "done": true,
+   "sec": "todo",
+   "top": "구매 리스트",
+   "name": "미니소 빗, 아이라이",
+   "o": 509
+  },
+  "b010": {
+   "grp": "타오바오",
+   "sub": "",
+   "done": true,
+   "sec": "todo",
+   "top": "구매 리스트",
+   "name": "말랑이",
+   "o": 510
   }
  },
  "links": {
