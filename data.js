@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 65;
+window.TRIP_REV = 66;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -1590,6 +1590,27 @@ window.TRIP = {
    "o": 303.05,
    "sub": "",
    "par": "k2_3"
+  },
+  "k1_10": {
+   "done": false,
+   "grp": "기내",
+   "name": "휴지",
+   "o": 210,
+   "sub": ""
+  },
+  "k1_11": {
+   "done": false,
+   "grp": "기내",
+   "name": "물티슈",
+   "o": 211,
+   "sub": ""
+  },
+  "k2_5": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "화장품",
+   "o": 301.5,
+   "sub": ""
   }
  },
  "links": {
