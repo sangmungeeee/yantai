@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 64;
+window.TRIP_REV = 65;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -941,137 +941,61 @@ window.TRIP = {
    "top": "확인사항"
   },
   "c009": {
-   "done": false,
-   "grp": "기내",
-   "name": "여권",
-   "o": 200,
-   "sub": ""
+   "del": true
   },
   "c010": {
-   "done": false,
-   "grp": "기내",
-   "name": "지갑",
-   "o": 201,
-   "sub": ""
+   "del": true
   },
   "c011": {
-   "done": false,
-   "grp": "기내",
-   "name": "아이패드",
-   "o": 202,
-   "sub": ""
+   "del": true
   },
   "c012": {
-   "done": false,
-   "grp": "기내",
-   "name": "카메라",
-   "o": 203,
-   "sub": ""
+   "del": true
   },
   "c013": {
-   "done": false,
-   "grp": "기내",
-   "name": "충전",
-   "o": 204,
-   "sub": ""
+   "del": true
   },
   "c014": {
-   "done": false,
-   "grp": "기내",
-   "name": "에어팟",
-   "o": 205,
-   "sub": ""
+   "del": true
   },
   "c015": {
-   "done": false,
-   "grp": "기내",
-   "name": "인형",
-   "o": 206,
-   "sub": ""
+   "del": true
   },
   "c016": {
-   "done": false,
-   "grp": "기내",
-   "name": "파우치 (필수)",
-   "o": 207,
-   "sub": ""
+   "del": true
   },
   "c017": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "세안 파우치",
-   "o": 300,
-   "sub": ""
+   "del": true
   },
   "c018": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "화장품 (최최소한!)",
-   "o": 301,
-   "sub": ""
+   "del": true
   },
   "c019": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "옷",
-   "o": 302,
-   "sub": ""
+   "del": true
   },
   "c020": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "속옷",
-   "o": 303,
-   "sub": ""
+   "del": true
   },
   "c021": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "잠옷",
-   "o": 304,
-   "sub": ""
+   "del": true
   },
   "c022": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "고데기",
-   "o": 305,
-   "sub": ""
+   "del": true
   },
   "c023": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "충전기",
-   "o": 306,
-   "sub": ""
+   "del": true
   },
   "c024": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "우산",
-   "o": 307,
-   "sub": ""
+   "del": true
   },
   "c025": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "칠리소스",
-   "o": 308,
-   "sub": ""
+   "del": true
   },
   "c026": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "보조가방",
-   "o": 309,
-   "sub": ""
+   "del": true
   },
   "c027": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "봉투",
-   "o": 310,
-   "sub": ""
+   "del": true
   },
   "b000": {
    "grp": "타오바오",
@@ -1236,252 +1160,97 @@ window.TRIP = {
    "o": 510
   },
   "c010_0": {
-   "done": false,
-   "grp": "기내",
-   "name": "한국 지갑",
-   "o": 201.1,
-   "sub": "",
-   "par": "c010"
+   "del": true
   },
   "c010_1": {
-   "done": false,
-   "grp": "기내",
-   "name": "중국 지갑 (신용카드, 트래블로그)",
-   "o": 201.2,
-   "sub": "",
-   "par": "c010"
+   "del": true
   },
   "c012_0": {
-   "done": false,
-   "grp": "기내",
-   "name": "카메라",
-   "o": 203.1,
-   "sub": "",
-   "par": "c012"
+   "del": true
   },
   "c012_1": {
-   "done": false,
-   "grp": "기내",
-   "name": "배터리",
-   "o": 203.2,
-   "sub": "",
-   "par": "c012"
+   "del": true
   },
   "c012_2": {
-   "done": false,
-   "grp": "기내",
-   "name": "스디",
-   "o": 203.3,
-   "sub": "",
-   "par": "c012"
+   "del": true
   },
   "c012_3": {
-   "done": false,
-   "grp": "기내",
-   "name": "스디리더기",
-   "o": 203.4,
-   "sub": "",
-   "par": "c012"
+   "del": true
   },
   "c013_0": {
-   "done": false,
-   "grp": "기내",
-   "name": "보조배터리",
-   "o": 204.1,
-   "sub": "",
-   "par": "c013"
+   "del": true
   },
   "c013_1": {
-   "done": false,
-   "grp": "기내",
-   "name": "케이블",
-   "o": 204.2,
-   "sub": "",
-   "par": "c013"
+   "del": true
   },
   "c013_2": {
-   "done": false,
-   "grp": "기내",
-   "name": "여분 충전기",
-   "o": 204.3,
-   "sub": "",
-   "par": "c013"
+   "del": true
   },
   "c016_0": {
-   "done": false,
-   "grp": "기내",
-   "name": "휴지",
-   "o": 207.1,
-   "sub": "",
-   "par": "c016"
+   "del": true
   },
   "c016_1": {
-   "done": false,
-   "grp": "기내",
-   "name": "물티슈",
-   "o": 207.2,
-   "sub": "",
-   "par": "c016"
+   "del": true
   },
   "c016_2": {
-   "done": false,
-   "grp": "기내",
-   "name": "쌍액",
-   "o": 207.3,
-   "sub": "",
-   "par": "c016"
+   "del": true
   },
   "c016_3": {
-   "done": false,
-   "grp": "기내",
-   "name": "향수",
-   "o": 207.4,
-   "sub": "",
-   "par": "c016"
+   "del": true
   },
   "c017_0": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "기초: 미스트, 앰플, 크림",
-   "o": 300.1,
-   "sub": "",
-   "par": "c017"
+   "del": true
   },
   "c017_1": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "씻기: 클렌징밤, 클렌징폼, 렌즈통, 트리트먼트, 샴푸, 칫솔",
-   "o": 300.2,
-   "sub": "",
-   "par": "c017"
+   "del": true
   },
   "c017_2": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "그 외: 헤어오일, 머리핀",
-   "o": 300.3,
-   "sub": "",
-   "par": "c017"
+   "del": true
   },
   "c019_0": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "상의 셋",
-   "o": 302.1,
-   "sub": "",
-   "par": "c019"
+   "del": true
   },
   "c019_1": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "하의 셋",
-   "o": 302.2,
-   "sub": "",
-   "par": "c019"
+   "del": true
   },
   "c019_2": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "바람막이 또는 얇은 패딩",
-   "o": 302.3,
-   "sub": "",
-   "par": "c019"
+   "del": true
   },
   "c020_0": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "양말 3",
-   "o": 303.1,
-   "sub": "",
-   "par": "c020"
+   "del": true
   },
   "c020_1": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "브라 3",
-   "o": 303.2,
-   "sub": "",
-   "par": "c020"
+   "del": true
   },
   "c020_2": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "팬티 4",
-   "o": 303.3,
-   "sub": "",
-   "par": "c020"
+   "del": true
   },
   "c023_0": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "카메라 충전기",
-   "o": 306.1,
-   "sub": "",
-   "par": "c023"
+   "del": true
   },
   "c023_1": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "큰 대가리",
-   "o": 306.2,
-   "sub": "",
-   "par": "c023"
+   "del": true
   },
   "c023_2": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "어댑터",
-   "o": 306.3,
-   "sub": "",
-   "par": "c023"
+   "del": true
   },
   "c023_3": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "8핀",
-   "o": 306.4,
-   "sub": "",
-   "par": "c023"
+   "del": true
   },
   "c023_4": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "워치 케이블",
-   "o": 306.5,
-   "sub": "",
-   "par": "c023"
+   "del": true
   },
   "c026_0": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "베이프",
-   "o": 309.1,
-   "sub": "",
-   "par": "c026"
+   "del": true
   },
   "c026_1": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "다이소",
-   "o": 309.2,
-   "sub": "",
-   "par": "c026"
+   "del": true
   },
   "c027_0": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "지퍼백",
-   "o": 310.1,
-   "sub": "",
-   "par": "c027"
+   "del": true
   },
   "c027_1": {
-   "done": false,
-   "grp": "캐리어",
-   "name": "비닐백",
-   "o": 310.2,
-   "sub": "",
-   "par": "c027"
+   "del": true
   },
   "b001": {
    "del": true
@@ -1491,6 +1260,336 @@ window.TRIP = {
   },
   "b007": {
    "del": true
+  },
+  "k1_0": {
+   "done": false,
+   "grp": "기내",
+   "name": "여권",
+   "o": 200,
+   "sub": ""
+  },
+  "k1_1": {
+   "done": false,
+   "grp": "기내",
+   "name": "지갑",
+   "o": 201,
+   "sub": ""
+  },
+  "k1_2": {
+   "done": false,
+   "grp": "기내",
+   "name": "아이패드",
+   "o": 202,
+   "sub": ""
+  },
+  "k1_3": {
+   "done": false,
+   "grp": "기내",
+   "name": "디카",
+   "o": 203,
+   "sub": ""
+  },
+  "k1_4": {
+   "done": false,
+   "grp": "기내",
+   "name": "보조배터리 (2만)",
+   "o": 204,
+   "sub": ""
+  },
+  "k1_5": {
+   "done": false,
+   "grp": "기내",
+   "name": "충전기+케이블",
+   "o": 205,
+   "sub": ""
+  },
+  "k1_6": {
+   "done": false,
+   "grp": "기내",
+   "name": "에어팟",
+   "o": 206,
+   "sub": ""
+  },
+  "k1_7": {
+   "done": false,
+   "grp": "기내",
+   "name": "인형",
+   "o": 207,
+   "sub": ""
+  },
+  "k1_8": {
+   "done": false,
+   "grp": "기내",
+   "name": "가나디파우치",
+   "o": 208,
+   "sub": ""
+  },
+  "k1_9": {
+   "done": false,
+   "grp": "기내",
+   "name": "시사파우치",
+   "o": 209,
+   "sub": ""
+  },
+  "k2_0": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "옷",
+   "o": 300,
+   "sub": ""
+  },
+  "k2_0_0": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "청바지",
+   "o": 300.01,
+   "sub": "",
+   "par": "k2_0"
+  },
+  "k2_0_1": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "노란티",
+   "o": 300.02,
+   "sub": "",
+   "par": "k2_0"
+  },
+  "k2_0_2": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "칼하트셔츠",
+   "o": 300.03,
+   "sub": "",
+   "par": "k2_0"
+  },
+  "k2_0_3": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "상의 1개 더",
+   "o": 300.04,
+   "sub": "",
+   "par": "k2_0"
+  },
+  "k2_0_4": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "빤스 4개",
+   "o": 300.05,
+   "sub": "",
+   "par": "k2_0"
+  },
+  "k2_0_5": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "브라자 2개",
+   "o": 300.06,
+   "sub": "",
+   "par": "k2_0"
+  },
+  "k2_0_6": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "양말 4개",
+   "o": 300.07,
+   "sub": "",
+   "par": "k2_0"
+  },
+  "k2_0_7": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "바람막이",
+   "o": 300.08,
+   "sub": "",
+   "par": "k2_0"
+  },
+  "k2_0_8": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "잠옷",
+   "o": 300.09,
+   "sub": "",
+   "par": "k2_0"
+  },
+  "k2_1": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "세안파우치",
+   "o": 301,
+   "sub": ""
+  },
+  "k2_1_0": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "칫솔",
+   "o": 301.01,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_1": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "클렌징오일(샘플)",
+   "o": 301.02,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_2": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "클렌징폼(소분)",
+   "o": 301.03,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_3": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "세안용삔",
+   "o": 301.04,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_4": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "웨트오일",
+   "o": 301.05,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_5": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "트리트먼트, 샴푸",
+   "o": 301.06,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_6": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "헤어오일(소분)",
+   "o": 301.07,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_7": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "토너",
+   "o": 301.08,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_8": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "수분크림",
+   "o": 301.09,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_9": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "선크림",
+   "o": 301.1,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_10": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "앰플",
+   "o": 301.11,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_1_11": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "팩",
+   "o": 301.12,
+   "sub": "",
+   "par": "k2_1"
+  },
+  "k2_2": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "충전기",
+   "o": 302,
+   "sub": ""
+  },
+  "k2_2_0": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "애플워치 케이블",
+   "o": 302.01,
+   "sub": "",
+   "par": "k2_2"
+  },
+  "k2_2_1": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "어댑터",
+   "o": 302.02,
+   "sub": "",
+   "par": "k2_2"
+  },
+  "k2_2_2": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "큰대가리",
+   "o": 302.03,
+   "sub": "",
+   "par": "k2_2"
+  },
+  "k2_3": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "기타",
+   "o": 303,
+   "sub": ""
+  },
+  "k2_3_0": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "고데기",
+   "o": 303.01,
+   "sub": "",
+   "par": "k2_3"
+  },
+  "k2_3_1": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "지퍼백",
+   "o": 303.02,
+   "sub": "",
+   "par": "k2_3"
+  },
+  "k2_3_2": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "비닐백",
+   "o": 303.03,
+   "sub": "",
+   "par": "k2_3"
+  },
+  "k2_3_3": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "칠리소스",
+   "o": 303.04,
+   "sub": "",
+   "par": "k2_3"
+  },
+  "k2_3_4": {
+   "done": false,
+   "grp": "캐리어",
+   "name": "보조가방",
+   "o": 303.05,
+   "sub": "",
+   "par": "k2_3"
   }
  },
  "links": {
