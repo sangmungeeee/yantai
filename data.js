@@ -1,6 +1,6 @@
 // 여행 데이터 (노션 기준). 고칠 땐 이 파일만 바꾸면 돼.
 // 노션에서 다시 맞출 때마다 TRIP_REV 숫자를 올림 (올리면 앱에서 고친 내용 대신 이 파일 내용이 적용됨)
-window.TRIP_REV = 72;
+window.TRIP_REV = 73;
 window.TRIP = {
  "events": {
   "n0_000": {
@@ -159,7 +159,7 @@ window.TRIP = {
   },
   "n1_001": {
    "day": 1,
-   "time": "13:30",
+   "time": "13:00",
    "end": "14:30",
    "title": "점심 - 마라샹궈 배달",
    "zh": "川椒麻辣香锅(南洪街店)",
@@ -183,7 +183,7 @@ window.TRIP = {
    "links": "",
    "kind": "",
    "badge": "",
-   "o": 3
+   "o": 4
   },
   "n1_003": {
    "day": 1,
@@ -197,7 +197,7 @@ window.TRIP = {
    "links": "https://blog.naver.com/cyworld_kyung/224402476942",
    "kind": "",
    "badge": "",
-   "o": 4
+   "o": 5
   },
   "n1_004": {
    "day": 1,
@@ -211,7 +211,7 @@ window.TRIP = {
    "links": "",
    "kind": "",
    "badge": "",
-   "o": 5
+   "o": 6
   },
   "n1_005": {
    "day": 1,
@@ -225,7 +225,7 @@ window.TRIP = {
    "links": "",
    "kind": "",
    "badge": "",
-   "o": 6
+   "o": 7
   },
   "n1_006": {
    "day": 1,
@@ -239,7 +239,7 @@ window.TRIP = {
    "links": "https://blog.naver.com/nowk_slowly/224405346383 https://blog.naver.com/owoouo/224342143925",
    "kind": "food",
    "badge": "",
-   "o": 7
+   "o": 8
   },
   "n2_000": {
    "day": 2,
@@ -562,6 +562,20 @@ window.TRIP = {
    "kind": "food",
    "badge": "",
    "o": 11
+  },
+  "n1_jyg": {
+   "day": 1,
+   "time": "14:30",
+   "end": "",
+   "title": "조양가 구경",
+   "zh": "朝阳街",
+   "addr": "",
+   "loc": "",
+   "memo": "숙소에서 택시",
+   "links": "",
+   "kind": "",
+   "badge": "",
+   "o": 3
   }
  },
  "days": {
@@ -569,7 +583,7 @@ window.TRIP = {
    "title": "숙소 → 믹스몰 → 숙소 배달 저녁"
   },
   "d1": {
-   "title": "네일 -> 마라샹궈 배달 -> 시광탑 -> 금사탄 -> 행복 야시장"
+   "title": "네일 -> 숙소 마라샹궈 -> 조양가 -> (고민 중)"
   },
   "d2": {
    "title": "펑라이 당일치기 -> 조이시티 하이디라오"
